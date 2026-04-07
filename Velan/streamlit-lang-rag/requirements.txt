@@ -16,14 +16,13 @@ sentence-transformers
 
 # Vector Database and Embeddings
 faiss-cpu>=1.7.4
-fastembed==0.4.1
 
 # Data Processing
 pandas>=2.0.0
 numpy>=1.24.0,<2
 
 # Image Processing
-pillow>=11.0.0
+pillow>=10.4.0
 
 # Web Scraping
 beautifulsoup4>=4.12.0
