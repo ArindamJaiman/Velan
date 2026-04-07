@@ -5,6 +5,9 @@ requests>=2.31.0
 # Environment and Configuration
 python-dotenv>=1.0.0
 
+# Pydantic (pinned for langchain compatibility)
+pydantic>=2.0,<2.8
+
 # LangChain and RAG Components
 langchain==0.1.17
 langchain-core==0.1.52

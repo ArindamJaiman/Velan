@@ -2322,12 +2322,15 @@ if "vectors" not in st.session_state:
     with st.spinner("🔨 Building comprehensive agricultural knowledge base..."):
         try:
             # Initialize embeddings
+            # Use HuggingFace Hub model name - downloads and caches automatically
+            # Falls back to local path if available (for offline/local development)
             MODEL_PATH = Path(__file__).parent.parent / "models" / "bge-small-en-v1.5"
-            print(MODEL_PATH)
+            MODEL_NAME = str(MODEL_PATH) if MODEL_PATH.exists() else "BAAI/bge-small-en-v1.5"
+            print(f"Using embedding model: {MODEL_NAME}")
             @st.cache_resource(show_spinner="🔨 Loading embeddings...")
             def get_embeddings():
                 return HuggingFaceEmbeddings(
-                    model_name=str(MODEL_PATH),
+                    model_name=MODEL_NAME,
                     model_kwargs={'device': 'cpu'},
                     encode_kwargs={'normalize_embeddings': True}
                 )
