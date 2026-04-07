@@ -1,0 +1,33 @@
+# Environment & Secrets
+.env
+.env.*
+
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Models (large binary files)
+models/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Git subfolders
+streamlit-lang-rag/.git/
+
+# Misc
+*.log
